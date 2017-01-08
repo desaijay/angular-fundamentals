@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app = "app">
+<head>
+	<title>Anglar app</title>
+
+</head>
+<body>
+
+<div ng-controller = "UserController as ctrl">
+<input type="text" name="search" ng-model="search">
+	<ul ng-repeat="person in ctrl.person | filter: search">
+		<li ng-hide= "person.birthYear > 2000">
+			{{person.firstName}}  {{person.lastName}} <br/>
+			Born in  {{person.birthYear}}
+		</li>
+
+	</ul>
+</div>
+
+<script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app = "app" ng-cloak>
+<head>
+	<title>Angular app</title>
+</head>
+<body>
+
+<div ng-controller = "UserController as ctrl" >
+<form ng-submit = "ctrl.AddPerson();">
+<p>Add person</p>
+<input type="text" ng-focus="ctrl.onFocus();" ng-model="ctrl.NewfirstName" placeholder="First Name">
+<input type="text" ng-model="ctrl.NewlastName" placeholder="Last Name">
+<button type="submit">Add</button>
+</form>
+	<ul ng-repeat="person in ctrl.person">
+		<li>
+			{{person.firstName}}  {{person.lastName}} 
+		</li>
+
+	</ul>
+</div>
+
+<script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>

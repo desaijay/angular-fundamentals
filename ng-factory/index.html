@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app = "app">
+<head>
+	<title>Angular app</title>
+</head>
+<body>
+<div ng-controller = "UserController as ctrl" >
+<form>
+<p>Add</p>
+<input type="number" ng-model="ctrl.firstno" ng-change ="ctrl.onToggle(1)"; placeholder="first number">
+<select ng-model="ctrl.Calc"  ng-init="ctrl.Calc='0' " ng-change="ctrl.onToggle(1);">
+<option ng-repeat="(V,T) in ctrl.rsMathCal" value="{{V}}">{{T}}</option>
+</select>
+<input type="number" ng-model="ctrl.secondno" ng-change ="ctrl.onToggle(1)"; placeholder="second number">
+<input type = "text" ng-model="ctrl.abc">
+</form>
+</div>
+<script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="MathService.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app = "app">
+<head>
+	<title>Anglar app</title>
+<style>
+	.showcolor{
+		background-color: blue;
+	}
+	.showcolor1{
+		background-color: red;
+	}
+</style>
+</head>
+<body>
+
+<div ng-controller = "UserController as ctrl">
+	<ul ng-repeat="person in ctrl.person | filter:  search">
+		<li ng-class="person.birthYear > 2000 ? 'showcolor' : 'showcolor1'  ">
+			{{person.firstName}}  {{person.lastName}} <br/>{{person.birthYear}}
+		</li>
+
+	</ul>
+</div>
+
+<script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>

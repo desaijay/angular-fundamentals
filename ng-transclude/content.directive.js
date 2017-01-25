@@ -1,6 +1,9 @@
 function content() {
 	return {
-		transclude: true,
+		transclude: {
+			name:'=name',
+			desc:'=desc'
+		},
 		template: `<div>
 				<h4>Contact</h4>
 				<div ng-transclude></div>
@@ -9,5 +12,5 @@ function content() {
 }
 
 angular
-	.module('app')
+.module('app')
 .directive('content', content);
